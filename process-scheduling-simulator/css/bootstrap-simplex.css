@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 /*!
  * bootswatch v3.3.4+1
  * Homepage: http://bootswatch.com
@@ -8,7 +8,7 @@
 */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
-  font-family: sans-serif;
+  font-family: 'Inter';
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -111,15 +111,17 @@ samp {
   font-family: monospace, monospace;
   font-size: 1em;
 }
-button,
+
 input,
 optgroup,
 select,
-textarea {
+textarea,
+button {
   color: inherit;
   font: inherit;
   margin: 0;
 }
+
 button {
   overflow: visible;
 }
@@ -1186,10 +1188,10 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 300;
+  font-family: 'Inter';
+  font-weight: 500;
   line-height: 1.1;
-  color: #444444;
+  color: #800000;
 }
 h1 small,
 h2 small,
@@ -2243,6 +2245,7 @@ pre code {
 }
 table {
   background-color: #faf3f3;
+  border-radius: 30px;
 }
 caption {
   padding-top: 8px;
@@ -2251,7 +2254,7 @@ caption {
   text-align: left;
 }
 th {
-  text-align: left;
+  text-align: center;
 }
 .table {
   width: 100%;
@@ -2267,7 +2270,6 @@ th {
   padding: 8px;
   line-height: 1.42857143;
   vertical-align: top;
-  border-top: 1px solid #dddddd;
 }
 .table > thead > tr > th {
   vertical-align: bottom;
@@ -3175,8 +3177,8 @@ fieldset[disabled] .btn-success.active {
 }
 .btn-info {
   color: #ffffff;
-  background-color: #029acf;
-  border-color: #029acf;
+  background-color: #AA0000;
+  border-color: #AA0000;
 }
 .btn-info:hover,
 .btn-info:focus,
@@ -3185,8 +3187,8 @@ fieldset[disabled] .btn-success.active {
 .btn-info.active,
 .open > .dropdown-toggle.btn-info {
   color: #ffffff;
-  background-color: #02749c;
-  border-color: #016d92;
+  background-color: #D40000;
+  border-color: #D40000;
 }
 .btn-info:active,
 .btn-info.active,
@@ -3211,11 +3213,11 @@ fieldset[disabled] .btn-info:active,
 .btn-info.disabled.active,
 .btn-info[disabled].active,
 fieldset[disabled] .btn-info.active {
-  background-color: #029acf;
-  border-color: #029acf;
+  background-color: #AA0000;
+  border-color: #AA0000;
 }
 .btn-info .badge {
-  color: #029acf;
+  color: #AA0000;
   background-color: #ffffff;
 }
 .btn-warning {
@@ -5671,11 +5673,9 @@ a.list-group-item-danger.active:focus {
   min-height: 20px;
   padding: 19px;
   margin-bottom: 20px;
-  background-color: #f4f4f4;
-  border: 1px solid #e3e3e3;
-  border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+  border: 1px solid #AA0000;
+  border-radius: 30px;
 }
 .well blockquote {
   border-color: #ddd;

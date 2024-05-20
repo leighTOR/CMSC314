@@ -645,14 +645,7 @@ $(document).ready(function () {
 				}
 
 				index = (index + 1) % processArray.length
-
-
-
-
 			}
-
-
-
 
 		}
 
@@ -687,7 +680,7 @@ $(document).ready(function () {
 			bar = new progressBar();
 
 			if (algorithm == "FCFS") {
-				$("#algorithm_explanation").text("First Come First Served will execute proccesses in the order in which they arrived");
+				$("#algorithm_explanation").text("First Come First Serve will execute proccesses in the order in which they arrived");
 				FCFS();
 				processTotal = processArray;
 			}
@@ -700,7 +693,7 @@ $(document).ready(function () {
 
 			else if (algorithm == "SRJF") {
 				SRJF();
-				$("#algorithm_explanation").text("Shortest Remaining Job First will execute proccesses from smallest to biggest. If a new proccess arrives that is smaller than the currently running proccess, it will interrupt it.");
+				$("#algorithm_explanation").text("Shortest Remaining Time First will execute proccesses from smallest to biggest. If a new proccess arrives that is smaller than the currently running proccess, it will interrupt it.");
 				processTotal = processArray;
 			}
 
@@ -1060,29 +1053,29 @@ $(".runButton").click(function () {
 				label: 'Waiting Time',
 				data: mainOutput.waitingTime,
 				backgroundColor: [
-					'#003f5c',
-					'#58508d',
-					'#ff6361',
-					'#ffa600',
-					'#77C2FE',
-					'#bc5090',
-					'#0b9a8d',
-					'#E65F8E',
-					'#323B81',
-					'#9c2162',
+					'#3E000D',
+					'#800000',
+					'#AA0000',
+					'#D40000',
+					'#FF0000',
+					'#FF2A2A',
+					'#FF5555',
+					'#FF8080',
+					'#FFAAAA',
+					'#FFD5D5',
 
 				],
 				borderColor: [
-					'rgba(176,162,247,1)',
-					'rgba(55,227,128,1)',
-					'rgba(255, 26, 104, 1)',
-					'rgba(0,207,255,1)',
-					'rgba(54, 162, 235, 1)',
-					'rgba(255, 206, 86, 1)',
-					'rgba(75, 192, 192, 1)',
-					'rgba(153, 102, 255, 1)',
-					'rgba(255, 159, 64, 1)',
-					'rgba(0, 0, 0, 1)',
+					'#FFD5D5',
+					'#FFAAAA',
+					'#FF8080',
+					'#FF5555',
+					'#FF2A2A',
+					'#FF0000',
+					'#D40000',
+					'#AA0000',
+					'#800000',
+					'#3E000D',
 				],
 				borderWidth: 1
 			}]
@@ -1109,28 +1102,28 @@ $(".runButton").click(function () {
 				label: 'Turn around Time',
 				data: mainOutput.turnAroundTime,
 				backgroundColor: [
-					'#003f5c',
-					'#58508d',
-					'#ff6361',
-					'#ffa600',
-					'#77C2FE',
-					'#bc5090',
-					'#0b9a8d',
-					'#E65F8E',
-					'#323B81',
-					'#9c2162',
+					'#FFD5D5',
+					'#FFAAAA',
+					'#FF8080',
+					'#FF5555',
+					'#FF2A2A',
+					'#FF0000',
+					'#D40000',
+					'#AA0000',
+					'#800000',
+					'#3E000D',
 				],
 				borderColor: [
-					'rgba(176,162,247,1)',
-					'rgba(55,227,128,1)',
-					'rgba(255, 26, 104, 1)',
-					'rgba(0,207,255,1)',
-					'rgba(54, 162, 235, 1)',
-					'rgba(255, 206, 86, 1)',
-					'rgba(75, 192, 192, 1)',
-					'rgba(153, 102, 255, 1)',
-					'rgba(255, 159, 64, 1)',
-					'rgba(0, 0, 0, 1)',
+					'#FFD5D5',
+					'#FFAAAA',
+					'#FF8080',
+					'#FF5555',
+					'#FF2A2A',
+					'#FF0000',
+					'#D40000',
+					'#AA0000',
+					'#800000',
+					'#3E000D',
 				],
 				borderWidth: 1
 			}]

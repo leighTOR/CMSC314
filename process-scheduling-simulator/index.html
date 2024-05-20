@@ -34,7 +34,8 @@
 
     .chartCard {
       width: 50vw;
-      height: calc(100vh - 100px);
+      margin-top: 50px;
+      margin-bottom: 100px;
 
       display: flex;
       align-items: center;
@@ -65,6 +66,22 @@
           display: none;
       }
   }
+
+  footer {
+      background-color: #AA0000;
+      padding: 10px;
+      margin-top: 10%;
+      text-align: center;
+      font-family: 'Inter';
+    }
+    footer a {
+      margin: 5px 0;
+      color: #fff;
+    }
+    footer p {
+      margin: 5px 0;
+      color: #fff;
+    }
   </style>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -87,17 +104,9 @@
 
   <title>Process Scheduling Simulator</title>
 </head>
-
-
 <body>
   <div class="container">
-    <h2 style="text-align: center; padding: 20px;" class="navStyle">
-      <a href="https://github.com/leighTOR/CMSC314Finals" target="_blank" color: #A70000; font-size: 30px;>CPU Process Scheduling Simulator</a></h2>
-    <p id="adj_counter" style="text-align: center;" class="lead">Type values into the table and the chart on the bottom
-      will show how this runs</p>
-
-
-
+    <h1 style="text-align: center; padding: 20px;" class="navStyle" background-color: #A70000; font-size: 50px;>CPU Process Scheduling Simulator</h1>
 
     <table class="table table-bordered table-condensed" id="inputTable">
       <thead>
@@ -202,8 +211,8 @@
             </button>
             <ul class="dropdown-menu" role="menu">
               <li><a calcStyle="FCFS" id="simple_calc">First Come First Serve</a></li>
-              <li><a calcStyle="SJF" id="simple_calc">Shortest Job First (non-premptive)</a></li>
-              <li><a calcStyle="SRJF" id="fancy_calc">Shortest Remaning Time First (premptive)</a></li>
+              <li><a calcStyle="SJF" id="simple_calc">Shortest Job First (non-preemptive)</a></li>
+              <li><a calcStyle="SRTF" id="fancy_calc">Shortest Remaning Time First (preemptive)</a></li>
               <li><a calcStyle="Round Robin" id="fast_calc">Round Robin</a></li>
               <li><a calcStyle="Priority" id="fast_calc">Priority</a></li>
             </ul>
@@ -219,13 +228,13 @@
           </div>
           <div class="input-group">
             <span class="input-group-btn">
-              <button id='remove_row' type="button" class="btn btn-default btn-number minusbtn" data-type="minus">
+              <button style="background-color: #AA0000; color: white;" id='remove_row' type="button" class="btn btn-default btn-number minusbtn" data-type="minus">
                 <span class="glyphicon glyphicon-minus"></span>
               </button>
             </span>
             <input id="proccess_num" disabled="disabled" class="form-control input-number" value="3">
             <span class="input-group-btn">
-              <button id='add_row' type="button" class="btn btn-default btn-number plusbtn" data-type="plus">
+              <button style="background-color: #AA0000; color: white;" id='add_row' type="button" class="btn btn-default btn-number plusbtn" data-type="plus">
                 <span class="glyphicon glyphicon-plus"></span>
               </button>
             </span>
@@ -237,7 +246,7 @@
           </div>
           <div class="input-group">
             <span class="input-group-btn">
-              <button id="subtract_context" type="button" class="btn btn-default btn-number" data-type="minus"
+              <button style="background-color: #AA0000; color: white;" id="subtract_context" type="button" class="btn btn-default btn-number" data-type="minus"
                 data-field="quant[1]">
                 <span class="glyphicon glyphicon-minus"></span>
               </button>
@@ -245,7 +254,7 @@
             <input id="enter_context" type="text" name="quant[1]" class="form-control input-number" value="0.0"
               style="background-color:white">
             <span class="input-group-btn">
-              <button id="add_context" type="button" class="btn btn-default btn-number" data-type="plus"
+              <button style="background-color: #AA0000; color: white;" id="add_context" type="button" class="btn btn-default btn-number" data-type="plus"
                 data-field="quant[1]">
                 <span class="glyphicon glyphicon-plus"></span>
               </button>
@@ -258,7 +267,7 @@
             </div>
             <div class="input-group">
               <span class="input-group-btn">
-                <button id="subtract_quantum" type="button" class="btn btn-default btn-number" data-type="minus"
+                <button style="background-color: #AA0000; color: white;" id="subtract_quantum" type="button" class="btn btn-default btn-number" data-type="minus"
                   data-field="quant[1]">
                   <span class="glyphicon glyphicon-minus"></span>
                 </button>
@@ -266,7 +275,7 @@
               <input id="enter_quantum" type="text" name="quant[1]" class="form-control input-number" value="2"
                 style="background-color:white">
               <span class="input-group-btn">
-                <button id="add_quantum" type="button" class="btn btn-default btn-number" data-type="plus"
+                <button style="background-color: #AA0000; color: white;" id="add_quantum" type="button" class="btn btn-default btn-number" data-type="plus"
                   data-field="quant[1]">
                   <span class="glyphicon glyphicon-plus"></span>
                 </button>
@@ -280,13 +289,17 @@
 
 
         <div style="display: block; text-align: center;">
+          <!--
           <p>Click on the run button to show the Output Table</p>
-          <button id="runBtn" class="runButton">Run</button>
+          -->
+          <button id="runBtn" class="runButton" style="background-color: #AA0000; color: white; border: none; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; margin: 4px 2px; cursor: pointer; border-radius: 10px;">Run</button>
         </div>
 
         <div style="display: block; text-align: center;">
+          <!--
           <p>Click on the Reset button to run another program</p>
-          <button onclick=(location.reload()) class="runButton">Reset</button>
+          -->
+          <button onclick=(location.reload()) style="background-color: #AA0000; color: white; border: none; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; margin: 4px 2px; cursor: pointer; border-radius: 10px;">Reset</button>
         </div>
 
         <!-- <div class="col-md-4" style="margin-top:20px;">
@@ -312,7 +325,7 @@
 
     <!-- <div id="outputDiv"></div> -->
 
-    <h1 style="text-align: center;">Output Table</h1>
+    <h2 style="text-align: center;">Output Table</h2>
     <hr>
 
     <table class="table table-bordered table-condensed" id="outputTable" style="margin-bottom: 50px;">
@@ -334,7 +347,7 @@
 
 
     <div class="datavisulization">
-    <h2 style="text-align: center; margin-bottom: 40px;">Data Visulization</h2>
+    <h2 style="text-align: center; margin-bottom: 40px;">Data Visualization</h2>
 
 
     <!-- <div class="barChart">
@@ -366,17 +379,16 @@
         </div>
       </div>
     </div>
-  </div>
+  </div style="text-align: center">
 
-
-    <span style="font-size: large; color: rgb(3, 27, 94);">CPU Utilization:
-      <div id="utilization" style="color:rgba(255, 26, 104, 1);"></div>
+    <span style="font-size: large; text-align: center; font-size: 20px; color: #800000;">CPU Utilization:
+      <div id="utilization" style="color:#3E000D;"></div>
     </span>
-    <span style="font-size: large; color: rgb(3, 27, 94);">Average turnaround time:
-      <div id="avgtat" style="color:rgba(255, 26, 104, 1);"></div>
+    <span style="font-size: large; text-align: center; font-size: 20px; color: #800000;">Average turnaround time:
+      <div id="avgtat" style="color:#3E000D;"></div>
     </span>
-    <span style="font-size: large; color: rgb(3, 27, 94);">Average waiting time:
-      <div id="avgwt" style="color:rgba(255, 26, 104, 1);"></div>
+    <span style="font-size: large; text-align: center; font-size: 20px;color: #800000;">Average waiting time:
+      <div id="avgwt" style="color:#3E000D;"></div>
     </span>
     <!-- /show explanation hide remove this if want explanation 
     <button id="explanation">Show Explanation</button>
@@ -413,7 +425,11 @@
     }
 
   </script>
-
+  <footer>
+    <h4><a href="https://github.com/leighTOR/CMSC314Finals" target="_blank">Created by Jamolin, Sabinet, Martizano, Casiño, and Copian &copy; 2024</a></h4>
+    <p>Final Requirement for CMSC 314</p>
+  </footer>
+  
 </body>
 
 </html>
