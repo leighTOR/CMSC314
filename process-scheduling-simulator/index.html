@@ -23,7 +23,7 @@
       flex-direction: column;
       width: 50vw;
       height: 40px;
-      color: rgba(255, 26, 104, 1);
+      color: #A70000;
     }
 
     .chartMenu p {
@@ -45,7 +45,7 @@
       width: 400px;
       padding: 20px;
       border-radius: 20px;
-      border: solid 3px rgba(255, 26, 104, 1);
+      border: solid 3px #A70000;
       background: white;
       color: black;
     }
@@ -90,18 +90,9 @@
 
 
 <body>
-
-  <nav style="background-color: #151D3B; padding: 20px;" class="navStyle">
-    <a href="index.html" style="color: #fff; font-size: 30px;">CPU Process Scheduling Simulator</a>
-   
-  </nav>
-
-
   <div class="container">
-
-
-
-    <h2 style="text-align: center;">CPU&nbsp;scheduler</h2>
+    <h2 style="text-align: center; padding: 20px;" class="navStyle">
+      <a href="https://github.com/leighTOR/CMSC314Finals" target="_blank" color: #A70000; font-size: 30px;>CPU Process Scheduling Simulator</a></h2>
     <p id="adj_counter" style="text-align: center;" class="lead">Type values into the table and the chart on the bottom
       will show how this runs</p>
 
@@ -111,9 +102,9 @@
     <table class="table table-bordered table-condensed" id="inputTable">
       <thead>
         <tr>
-          <th>Process:</th>
-          <th>Arrival Time:</th>
-          <th>Burst Time:</th>
+          <th>Process</th>
+          <th>Arrival Time</th>
+          <th>Burst Time</th>
           <th class="priority collapse">Priority:</th>
         </tr>
       </thead>
@@ -194,10 +185,6 @@
 
     <br>
 
-
-
-
-
     <div class="well">
 
       <div class="row">
@@ -214,9 +201,9 @@
               FCFS <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" role="menu">
-              <li><a calcStyle="FCFS" id="simple_calc">First Come First Served</a></li>
+              <li><a calcStyle="FCFS" id="simple_calc">First Come First Serve</a></li>
               <li><a calcStyle="SJF" id="simple_calc">Shortest Job First (non-premptive)</a></li>
-              <li><a calcStyle="SRJF" id="fancy_calc">Shortest Remaing Job First (premptive)</a></li>
+              <li><a calcStyle="SRJF" id="fancy_calc">Shortest Remaning Time First (premptive)</a></li>
               <li><a calcStyle="Round Robin" id="fast_calc">Round Robin</a></li>
               <li><a calcStyle="Priority" id="fast_calc">Priority</a></li>
             </ul>
@@ -331,13 +318,13 @@
     <table class="table table-bordered table-condensed" id="outputTable" style="margin-bottom: 50px;">
       <thead>
         <tr>
-          <th style="background-color: #9adcff;">Process:</th>
-          <th style="background-color: #9ADCFF;">Arrival Time:</th>
-          <th style="background-color: #9ADCFF;">Burst Time:</th>
+          <th style="background-color: #FFBABA;">Process</th>
+          <th style="background-color: #FFBABA;">Arrival Time</th>
+          <th style="background-color: #FFBABA;">Burst Time</th>
           <!-- <th class="priority collapse">Priority:</th> -->
-          <th style="background-color: #9ADCFF;">Completion Time: </th>
-          <th style="background-color: #9ADCFF;">Turn around Time: </th>
-          <th style="background-color: #9ADCFF;">Waiting Time: </th>
+          <th style="background-color: #FFBABA;">Completion Time</th>
+          <th style="background-color: #FFBABA;">Turnaround Time</th>
+          <th style="background-color: #FFBABA;">Waiting Time</th>
         </tr>
       </thead>
 
@@ -356,6 +343,17 @@
 
     <hr>
     <div class="pie" id="chartdiv">
+      <div class="second">
+        <div class="chartMenu">
+          <p>Turnaround Time Chart</p>
+        </div>
+        <div class="chartCard">
+          <div class="chartBox">
+            <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
+            <canvas id="mytatChart" width="400" height="400"></canvas>
+          </div>
+        </div>
+      </div>
       <div class="first">
         <div class="chartMenu">
           <p>Waiting Time Chart</p>
@@ -366,20 +364,6 @@
             <!-- <canvas id="myChart"></canvas> -->
           </div>
         </div>
-
-
-      </div>
-      <div class="second">
-        <div class="chartMenu">
-          <p>Turn around Time Chart</p>
-        </div>
-        <div class="chartCard">
-          <div class="chartBox">
-            <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
-            <canvas id="mytatChart" width="400" height="400"></canvas>
-          </div>
-        </div>
-
       </div>
     </div>
   </div>
@@ -388,13 +372,13 @@
     <span style="font-size: large; color: rgb(3, 27, 94);">CPU Utilization:
       <div id="utilization" style="color:rgba(255, 26, 104, 1);"></div>
     </span>
+    <span style="font-size: large; color: rgb(3, 27, 94);">Average turnaround time:
+      <div id="avgtat" style="color:rgba(255, 26, 104, 1);"></div>
+    </span>
     <span style="font-size: large; color: rgb(3, 27, 94);">Average waiting time:
       <div id="avgwt" style="color:rgba(255, 26, 104, 1);"></div>
     </span>
-    <span style="font-size: large; color: rgb(3, 27, 94);">Average turn around time:
-      <div id="avgtat" style="color:rgba(255, 26, 104, 1);"></div>
-    </span>
-
+    <!-- /show explanation hide remove this if want explanation 
     <button id="explanation">Show Explanation</button>
   
 
@@ -406,6 +390,7 @@
       </div>
 
   </div><!-- /containter -->
+  
 
 
   <!-- <script src="js/new.js"></script> -->
